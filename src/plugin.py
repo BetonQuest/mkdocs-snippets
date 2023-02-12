@@ -131,12 +131,17 @@ def relativize_links(snippet_content, current_path, snippet_id) -> str:
         if "://" in link:
             continue
 
+        if link.startswith("../"):
+            raise PluginError(f"The link '{link}' in the snippet '{snippet_id}' is a relative link! "
+                              f"Relative links in snippets cannot be resolved correctly. Please read the usage section"
+                              f" of the snippet plugin in README.md to learn how to format links.")
+
         link_and_filetype = link.split(".")
 
         if len(link_and_filetype) == 1:
             raise PluginError(f"The link '{link}' in the snippet '{snippet_id}' does not have a file type! "
-                              f"Is it an absolute link? Those are not supported by mkdocs and may break in the deployed "
-                              f"docs! Use a relative link instead.")
+                              f"Is it an absolute link? Those are not supported by mkdocs and may break in the deployed"
+                              f"docs! Please read the usage section in README.md to learn how to format links.")
 
         link_without_filetype = link_and_filetype[0]
         filetype = link_and_filetype[1]
