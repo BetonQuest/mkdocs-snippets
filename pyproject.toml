@@ -1,0 +1,30 @@
+[project]
+name = "mkdocs-snippets"
+version = "1.0.0"
+authors = [
+    { name="CyberOtter", email="contact@betonquest.org" },
+]
+description = "Snippets for MkDocs"
+readme = "README.md"
+requires-python = ">=3.7"
+keywords = ["mkdocs", "snippets"]
+classifiers = [
+    'Development Status :: 5 - Production/Stable',
+    'Intended Audience :: Developers',
+    'Intended Audience :: Information Technology',
+    'License :: OSI Approved :: MIT License',
+    'Programming Language :: Python',
+    'Programming Language :: Python :: 3 :: Only',
+]
+dependencies = [
+    'mkdocs>=1.0.4',
+    'pyyaml>=6.0'
+]
+
+[project.urls]
+"Homepage" = "https://github.com/BetonQuest/mkdocs-snippets"
+"Bug Tracker" = "https://github.com/BetonQuest/mkdocs-snippets/issues"
+
+[build-system]
+requires = ["setuptools>=61.0.0", "wheel"]
+build-backend = "setuptools.build_meta"
