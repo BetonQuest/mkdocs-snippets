@@ -148,6 +148,8 @@ def relativize_links(snippet_content, current_path, snippet_id) -> str:
 
         current_path_without_filename = current_path.rsplit("/", 2)[0]
 
+        current_path_without_filename = remove_mike_version_from_path(current_path_without_filename)
+
         relative_link = os.path.relpath(f"docs/{link_without_filetype}", f"docs/{current_path_without_filename}")
 
         relative_link += "." + filetype
@@ -160,3 +162,15 @@ def relativize_links(snippet_content, current_path, snippet_id) -> str:
 
         snippet_content = snippet_content.replace(f"[{link_text}]({link})", f"[{link_text}]({relative_link})")
     return snippet_content
+
+
+mike_version_prefix_pattern = re.compile("(/[^/]*/)")
+
+
+def remove_mike_version_from_path(current_path_without_filename):
+    env = os.environ.copy()
+    if "MIKE_DOCS_VERSION" in env:
+        match = re.search(mike_version_prefix_pattern, current_path_without_filename)
+        if match:
+            current_path_without_filename = current_path_without_filename[match.end():]
+    return current_path_without_filename

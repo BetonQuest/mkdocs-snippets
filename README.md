@@ -4,12 +4,13 @@ This plugin allows you to include snippets into your mkdocs documentation.
 
 ## Features
 
-* Multiple snippets per file thanks to YAML syntax.
-* Snippets are loaded from any (nested) directory inside the configured `snippets_dir`.
-  * This allows you to organize your snippets in a way that makes sense for you. 
-* Recursively include snippets in snippets.
+* Organize your snippets in a way that makes sense for you: 
+  * Multiple snippets per file thanks to YAML syntax.
+  * Snippets are loaded from any (nested) directory inside the configured `snippets_dir`.
+  * Recursively include snippets in snippets!
 * Links in snippets are automatically converted to relative links based on the snippet's location.
   * This allows you to use links in your snippets without having to worry about the snippet's location.
+  * Also works with `mike`!
 * Snippets preserve the indentation of the snippet call.
   * This allows you to use snippets in lists and code blocks without having to worry about indentation. 
 * Customizable snippet syntax.
@@ -31,7 +32,6 @@ plugins:
         - snippets/*
   - snippets
 ```
-
 
 ## Usage
 The plugin will load snippets from the default directory `snippets` which must be inside your documentation directory.
