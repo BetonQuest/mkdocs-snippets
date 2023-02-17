@@ -95,9 +95,6 @@ class Snippets(BasePlugin[SnippetPluginConfig]):
                                f"{self.config.delimiter}"
                 markdown = markdown.replace(snippet_call, snippet_content)
 
-                with io.open(f"C:\\Users\\Lars\\Desktop\\crap\\mkdown{page.title}.txt", "w", encoding="utf-8") as f:
-                    f.write(markdown)
-                    f.close()
         return markdown
 
     def preserve_indentation(self, snippet_content: str, markdown: str) -> str:
