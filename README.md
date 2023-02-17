@@ -19,6 +19,7 @@ This plugin allows you to include snippets into your mkdocs documentation.
 `pip install mkdocs-snippets`
 
 `pip install mkdocs-exclude` (recommended)
+
 Consider adding the plugins to a `requirements.txt` file alongside other Python dependencies for your project.
 
 ## Setup
