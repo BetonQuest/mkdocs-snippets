@@ -8,8 +8,8 @@ This plugin allows you to include snippets into your mkdocs documentation.
   * Multiple snippets per file thanks to YAML syntax.
   * Snippets are loaded from any (nested) directory inside the configured `snippets_dir`.
   * Recursively include snippets in snippets!
-* Links in snippets are automatically converted to relative links based on the snippet's location.
-  * This allows you to use links in your snippets without having to worry about the snippet's location.
+* Documentation links in snippets are automatically converted to relative links based on the snippet's location.
+  * This allows you to link to other documentation pages from your snippets without having to worry about the snippet's location.
   * Also works with `mike`!
 * Snippets preserve the indentation of the snippet call.
   * This allows you to use snippets in lists and code blocks without having to worry about indentation. 
@@ -17,6 +17,7 @@ This plugin allows you to include snippets into your mkdocs documentation.
 
 ## Installation
 `pip install mkdocs-snippets`
+
 `pip install mkdocs-exclude` (recommended)
 Consider adding the plugins to a `requirements.txt` file alongside other Python dependencies for your project.
 
@@ -50,17 +51,19 @@ myOtherSnippet: |-
 All top level keys in the snippet file are treated as snippets. Every key is a snippet ID.
 
 ### Snippet Syntax
-The default snippet syntax is `@Snippet:snippetFile:snippetID`.
+The default snippet syntax is `@Snippet:snippetFile:snippetID@`.
 
 ### Links in Snippets
-Links in snippets are automatically converted to relative links based on where the snippet is used.
-This allows you to use links in your snippets without having to worry that the snippet might be used in a directory
+Internal documentation links in snippets are automatically converted to relative links based on where the snippet is used.
+This allows you to use documentation links in your snippets without having to worry that the snippet might be used in a directory
 in which the link does not work.
 Therefore, links in the snippet must be written as if they were in the root of the documentation directory.
 
 #### Example
 Consider the following documentation structure (`docs/` is the documentation's root directory):
+
 `docs/API/Overview.md`
+
 `docs/API/Client/Cookbook.md`
 
 A snippet would look like this:
