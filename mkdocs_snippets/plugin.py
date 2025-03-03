@@ -143,7 +143,11 @@ def relativize_links(snippet_content, current_path, snippet_id) -> str:
         link_without_filetype = link_and_filetype[0]
         filetype = link_and_filetype[1]
 
-        current_path_without_filename = current_path.rsplit("/", 2)[0]
+        if current_path is None:
+            # The docs are hosted in the root
+            current_path_without_filename = ''
+        else:
+            current_path_without_filename = current_path.rsplit("/", 2)[0]
 
         current_path_without_filename = remove_mike_version_from_path(current_path_without_filename)
 
