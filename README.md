@@ -37,7 +37,7 @@ plugins:
 
 ## Usage
 The plugin will load snippets from the default directory `snippets` which must be inside your documentation directory.
-It is allowed to have any amount of files and subdirectories inside the snippet directory.
+It is allowed to have any number of files and subdirectories inside the snippet directory.
 
 These files must be in the YAML format.
 ```yaml
@@ -91,3 +91,7 @@ plugins:
     identifier: "snip"
     divider_char: ">"
 ```
+
+## Releasing 
+To release a new version of the plugin, follow the steps in the official Python [packaging guide](https://packaging.python.org/tutorials/packaging-projects/#generating-distribution-archives).
+
