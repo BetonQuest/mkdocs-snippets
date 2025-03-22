@@ -1,12 +1,17 @@
 [project]
 name = "mkdocs-snippets"
+description = "Snippets for MkDocs"
 version = "1.3.1"
 authors = [
-    { name="CyberOtter", email="contact@betonquest.org" },
+    { name = "CyberOtter", email = "contact@betonquest.org" },
 ]
-description = "Snippets for MkDocs"
+
 readme = "README.md"
-requires-python = ">=3.7"
+[project.urls]
+"Homepage" = "https://github.com/BetonQuest/mkdocs-snippets"
+"Bug Tracker" = "https://github.com/BetonQuest/mkdocs-snippets/issues"
+
+
 keywords = ["mkdocs", "snippets"]
 license = "MIT"
 classifiers = [
@@ -16,15 +21,19 @@ classifiers = [
     'Programming Language :: Python',
     'Programming Language :: Python :: 3 :: Only',
 ]
+requires-python = ">=3.8"
 dependencies = [
     'mkdocs>=1.0.4',
     'pyyaml>=6.0'
 ]
 
-[project.urls]
-"Homepage" = "https://github.com/BetonQuest/mkdocs-snippets"
-"Bug Tracker" = "https://github.com/BetonQuest/mkdocs-snippets/issues"
-
 [build-system]
 requires = ["setuptools>=61.0.0", "wheel"]
 build-backend = "setuptools.build_meta"
+
+[pytest]
+testpaths = ["tests"]
+[tool.pytest.ini_options]
+addopts = [
+    "--import-mode=importlib",
+]

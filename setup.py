@@ -4,7 +4,7 @@ setup(
     packages=find_packages(),
     entry_points={
         'mkdocs.plugins': [
-            'snippets = mkdocs_snippets.plugin:Snippets'
+            'snippets = src.mkdocs_snippets.plugin:Snippets'
         ]
     }
 )
