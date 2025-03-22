@@ -1,4 +1,4 @@
-from src.plugin import relativize_links
+from src.mkdocs_snippets.plugin import relativize_links
 
 
 class TestClass:
