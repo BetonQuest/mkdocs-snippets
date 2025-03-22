@@ -8,11 +8,11 @@ description = "Snippets for MkDocs"
 readme = "README.md"
 requires-python = ">=3.7"
 keywords = ["mkdocs", "snippets"]
+license = "MIT"
 classifiers = [
     'Development Status :: 5 - Production/Stable',
     'Intended Audience :: Developers',
     'Intended Audience :: Information Technology',
-    'License :: OSI Approved :: MIT License',
     'Programming Language :: Python',
     'Programming Language :: Python :: 3 :: Only',
 ]
