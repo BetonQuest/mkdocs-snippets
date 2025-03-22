@@ -35,3 +35,6 @@ testpaths = ["tests"]
 addopts = [
     "--import-mode=importlib",
 ]
+
+[project.entry-points."mkdocs.plugins"]
+snippets = "mkdocs_snippets.plugin:Snippets"
