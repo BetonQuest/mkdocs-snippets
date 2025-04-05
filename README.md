@@ -92,6 +92,23 @@ plugins:
     divider_char: ">"
 ```
 
-## Releasing 
+## Contributing
+This section is for contributors and maintainers.
+
+### Setup Dev Environment
+
+```bash
+ pip install -r requirements/dev-requirements.txt
+ pip install -r requirements/requirements.txt
+```
+
+### Releasing 
 To release a new version of the plugin, follow the steps in the official Python [packaging guide](https://packaging.python.org/tutorials/packaging-projects/#generating-distribution-archives).
 
+### Dependency Management
+To manage dependencies, we use [pip-tools](https://github.com/jazzband/pip-tools) to generate `requirements.txt`/`dev-requirements.txt` files from `requirements.in`/`dev-requirements.in`.
+
+To update your local environment with the latest dependencies, run:
+```bash
+pip-sync requirements/requirements.txt requirements/dev-requirements.txt
+```

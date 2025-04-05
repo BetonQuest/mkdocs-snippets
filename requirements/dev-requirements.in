@@ -1,0 +1,12 @@
+# Dependencies are managed with pip-tools
+#
+# Pin all dev-dependencies here, use requirements.in for runtime dependencies.
+# Then see *requirements.txt on how to auto-generate these files if changes were made.
+
+# Use base package dependencies as constraint:
+-c requirements.txt
+
+pip-tools==7.4.1
+setuptools==78.1.0
+pip==25.0.1
+pytest==8.3.5

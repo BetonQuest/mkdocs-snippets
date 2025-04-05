@@ -1,0 +1,6 @@
+# Define pinned versions of dependencies here
+# Then run  pip-compile --upgrade --allow-unsafe
+
+mkdocs==1.6.1
+pyyaml==6.0.2
+
