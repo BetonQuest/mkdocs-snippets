@@ -1,6 +1,7 @@
 # Mkdocs Snippets Plugin
 
-This plugin allows you to include snippets into your mkdocs documentation.
+This plugin allows you to include snippets in your mkdocs documentation.
+It is available as a [PyPI package](https://pypi.org/project/mkdocs-snippets/).
 
 ## Features
 
