@@ -16,6 +16,7 @@ classifiers = [
     'Programming Language :: Python',
     'Programming Language :: Python :: 3 :: Only',
 ]
+dynamic = ["dependencies", "optional-dependencies"]
 
 [project.urls]
 "Homepage" = "https://github.com/BetonQuest/mkdocs-snippets"
@@ -24,7 +25,6 @@ classifiers = [
 [build-system]
 requires = ["setuptools>=61.0.0", "wheel"]
 build-backend = "setuptools.build_meta"
-dynamic = ["dependencies", "optional-dependencies"]
 
 [tool.setuptools.dynamic]
 dependencies = { file = ["requirements.in"] }
