@@ -85,7 +85,7 @@ class Snippets(BasePlugin[SnippetPluginConfig]):
 
                 snippet_content = self.snippets[snippet_address][snippet_id]
 
-                snippet_content = relativize_links(snippet_content, page.abs_url, snippet_id)
+                snippet_content = relativize_links(snippet_content, page.url, snippet_id)
 
                 snippet_content = self.preserve_indentation(snippet_content, markdown)
 
@@ -122,6 +122,10 @@ markdown_link_pattern = re.compile(r"\[(.*)\]\((.*(#.*)?)\)")
 
 
 def relativize_links(snippet_content, current_path, snippet_id) -> str:
+    current_path = '/' + current_path.strip('/') + '/'
+    current_path_without_filename = current_path.rsplit("/", 2)[0]
+    current_path_without_filename = remove_mike_version_from_path(current_path_without_filename)
+
     matches = re.findall(markdown_link_pattern, snippet_content)
     for match in matches:
         link_text = match[0]
@@ -145,14 +149,6 @@ def relativize_links(snippet_content, current_path, snippet_id) -> str:
 
         link_without_filetype = link_and_filetype[0]
         filetype = link_and_filetype[1]
-
-        if current_path is None:
-            # The docs are hosted in the root
-            current_path_without_filename = ''
-        else:
-            current_path_without_filename = current_path.rsplit("/", 2)[0]
-
-        current_path_without_filename = remove_mike_version_from_path(current_path_without_filename)
 
         relative_link = os.path.relpath(f"docs/{link_without_filetype}", f"docs/{current_path_without_filename}")
 
