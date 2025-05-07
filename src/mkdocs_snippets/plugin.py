@@ -122,6 +122,7 @@ markdown_link_pattern = re.compile(r"\[(.*)\]\((.*(#.*)?)\)")
 
 
 def relativize_links(snippet_content, current_path, snippet_id) -> str:
+    # Ensure the path always starts and ends with a slash, even when the path is empty
     current_path = '/' + current_path.strip('/') + '/'
     current_path_without_filename = current_path.rsplit("/", 2)[0]
     current_path_without_filename = remove_mike_version_from_path(current_path_without_filename)
