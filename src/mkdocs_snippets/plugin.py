@@ -36,7 +36,12 @@ class Snippets(BasePlugin[SnippetPluginConfig]):
     def on_config(self, config: MkDocsConfig) -> None:
         self.snippet_syntax_start = self.config.delimiter + self.config.identifier + self.config.divider_char
         self.snippet_syntax_pattern = re.compile(
-            f"{self.snippet_syntax_start}(.*){self.config.divider_char}(.*){self.config.delimiter}")
+            self.snippet_syntax_start
+            + f"([^{self.config.divider_char}]+)"
+            + self.config.divider_char
+            + f"([^{self.config.delimiter}]+)"
+            + self.config.delimiter
+        )
 
     # Builds a snippet index based on all files in the snippets_directory
     def on_files(self, files: Files, *, config: MkDocsConfig) -> Optional[Files]:
