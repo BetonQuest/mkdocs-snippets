@@ -7,6 +7,6 @@
 -c requirements.txt
 
 pip-tools==7.4.1
-setuptools==78.1.1
+setuptools==83.0.0
 pip==26.1.2
 pytest==9.0.3
